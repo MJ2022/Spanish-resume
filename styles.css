@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap");
+
+html {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+*,
+:before,
+:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #ffffff;
+  font-family: Roboto;
+  line-height: 1.5;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+a:not(li > a) {
+  text-decoration: none;
+  color: black;
+}
+
+.resume {
+  display: grid;
+  max-width: 55rem;
+  margin: auto;
+  margin-top: 3rem;
+  grid-template-columns: 1fr;
+  grid-template-areas: "photo" "name" "contact" "about" "work" "education" "skills" "references";
+  grid-gap: 0.5rem 3rem;
+  padding: 0 2rem;
+  -webkit-box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.43);
+  box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.43);
+}
+
+.name {
+  grid-area: name;
+  text-align: center;
+}
+
+.name > h1 {
+  font-size: 3rem;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  margin-left: 30px;
+}
+
+.name > p {
+  color: #002896;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: none;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.photo {
+  grid-area: photo;
+  padding: 2rem 0 0;
+}
+
+.photo > img {
+  max-width: 100%;
+  width: 10rem;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+.about {
+  grid-area: about;
+  text-align: justify;
+}
+
+.about ul {
+  padding: 0;
+  list-style-position: inside;
+}
+
+.contact {
+  grid-area: contact;
+}
+
+.contact > ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+}
+
+.contact > ul > li {
+  padding: 0.2rem 0;
+}
+
+.contact > ul > li > i {
+  padding: 0 0.7rem;
+}
+
+.contact > ul > li > a {
+  color: black;
+  text-decoration: none;
+}
+
+.work {
+  grid-area: work;
+}
+
+.work > .industry {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin: 0;
+  background-color: #0096962a;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+
+.work > p {
+  color: #002896;
+  font-weight: 600;
+}
+
+.work > p > span {
+  color: grey;
+  font-weight: normal;
+}
+
+.skills {
+  grid-area: skills;
+}
+
+.education {
+  grid-area: education;
+}
+
+.education > p {
+  color: #002896;
+  font-weight: 600;
+}
+
+.education > p > span {
+  color: grey;
+  font-weight: normal;
+}
+
+.projects > .blocks > span {
+  border: 1px solid black;
+  border-radius: 0.2rem;
+  padding: 0.2rem;
+  margin: 0.2rem 0.3rem;
+}
+
+hr {
+  width: 100%;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, grey, #ccc);
+}
+
+@media screen and (min-width: 900px) {
+  .resume {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "name photo" "contact contact" "about about" "work work" "skills skills"
+      "education education";
+  }
+  .name {
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact > ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #002896;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .contact > ul > li > a {
+    color: white;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .resume {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "name photo" "contact contact" "work about" "skills education";
+  }
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  .resume {
+    grid-template-columns: 1fr;
+    grid-template-areas: "name photo" "contact contact" "about about" "education education" "work work" "skills skills";
+    margin: auto;
+    padding: none;
+    line-height: 0.7rem;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    text-align: center;
+  }
+
+  .name {
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 2rem;
+  }
+
+  .contact > ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #001e71;
+  }
+
+  .contact > ul > li > a {
+    color: #ffffff;
+  }
+
+  body {
+    background: #ffffff;
+    font-family: Roboto;
+    line-height: 1;
+    font-size: 0.98rem;
+  }
+
+  h3 {
+    font-weight: 200;
+  }
+
+  a:not(li > a) {
+    text-decoration: none;
+    color: black;
+  }
+
+  .name > h1 {
+    font-size: 2.5rem;
+    margin-left: 30px;
+    font-weight: 600;
+    margin-top: 40px;
+  }
+
+  .name > p {
+    color: #001e71;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+
+  .photo {
+    grid-area: photo;
+    padding: 0.5rem 0 0;
+  }
+
+  .photo > img {
+    max-width: 100%;
+    width: 6.5rem;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+  }
+
+  .about {
+    grid-area: about;
+    text-align: justify;
+    line-height: 1.05em;
+  }
+
+  .contact {
+    grid-area: contact;
+  }
+
+  .contact > ul > li {
+    padding: 0.2rem 0;
+  }
+
+  .contact > ul > li > i {
+    padding: 0 0.5rem;
+  }
+
+  .work {
+    grid-area: work;
+    margin-bottom: none;
+  }
+
+  .work > .industry {
+    display: none;
+  }
+
+  .work > h3 {
+    color: #001e71;
+    font-weight: 600;
+  }
+
+  .work > p {
+    color: #000000;
+    font-weight: 400;
+  }
+
+  .work > p > span {
+    color: rgb(113, 112, 112);
+    font-weight: normal;
+  }
+
+  .work > ul {
+    line-height: 1.25em;
+    margin-bottom: none;
+  }
+
+  .skills {
+    grid-area: skills;
+    margin-top: none;
+  }
+
+  .skills > ul {
+    line-height: 1em;
+  }
+
+  .education {
+    grid-area: education;
+  }
+
+  .education > h3 {
+    color: #001e71;
+    font-weight: 600;
+  }
+
+  .education > p {
+    color: #a7a9ac;
+    font-weight: 400;
+  }
+
+  .education > p > span {
+    color: #000000;
+    font-weight: normal;
+  }
+
+  hr {
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    border: 0;
+    height: 1px;
+    background: #333;
+  }
+}
